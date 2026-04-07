@@ -1,0 +1,57 @@
+[
+  {
+    "patient_id": "PT-001",
+    "age": 58,
+    "sex": "F",
+    "diagnosis": "Type 2 Diabetes Mellitus",
+    "comorbidities": ["Chronic Kidney Disease Stage 3a", "Hypertension"],
+    "current_medications": ["Metformin 1000mg BID", "Lisinopril 10mg QD", "Atorvastatin 20mg QD"],
+    "lab_values": {"HbA1c": 8.4, "eGFR": 52.0, "ALT": 28.0, "body_weight_kg": 82.0, "systolic_bp": 138.0},
+    "visit_dates": ["2025-01-15", "2025-02-12", "2025-04-10"],
+    "adverse_events": []
+  },
+  {
+    "patient_id": "PT-002",
+    "age": 72,
+    "sex": "M",
+    "diagnosis": "Type 2 Diabetes Mellitus",
+    "comorbidities": ["Heart Failure NYHA Class III", "Hypertension", "Atrial Fibrillation"],
+    "current_medications": ["Insulin Glargine 30U QD", "Furosemide 40mg BID", "Warfarin 5mg QD"],
+    "lab_values": {"HbA1c": 9.1, "eGFR": 38.0, "ALT": 22.0, "body_weight_kg": 91.0, "systolic_bp": 152.0},
+    "visit_dates": ["2025-01-20"],
+    "adverse_events": []
+  },
+  {
+    "patient_id": "PT-003",
+    "age": 45,
+    "sex": "M",
+    "diagnosis": "Type 2 Diabetes Mellitus",
+    "comorbidities": ["Obesity"],
+    "current_medications": ["Semaglutide 1mg weekly", "Empagliflozin 10mg QD"],
+    "lab_values": {"HbA1c": 8.9, "eGFR": 78.0, "ALT": 34.0, "body_weight_kg": 118.0, "systolic_bp": 128.0},
+    "visit_dates": ["2025-01-18"],
+    "adverse_events": []
+  },
+  {
+    "patient_id": "PT-004",
+    "age": 62,
+    "sex": "F",
+    "diagnosis": "Non-Small Cell Lung Cancer (NSCLC)",
+    "comorbidities": ["Hypothyroidism"],
+    "current_medications": ["Levothyroxine 100mcg QD"],
+    "lab_values": {"ANC": 2.1, "platelets": 189.0, "creatinine": 0.9, "ALT": 41.0, "ECOG_PS": 1.0},
+    "visit_dates": ["2025-02-01", "2025-02-15"],
+    "adverse_events": []
+  },
+  {
+    "patient_id": "PT-005",
+    "age": 55,
+    "sex": "M",
+    "diagnosis": "Non-Small Cell Lung Cancer (NSCLC)",
+    "comorbidities": ["Rheumatoid Arthritis (active, on biologics)", "Hypertension"],
+    "current_medications": ["Adalimumab 40mg q2w", "Methotrexate 15mg weekly", "Amlodipine 5mg QD"],
+    "lab_values": {"ANC": 1.8, "platelets": 210.0, "creatinine": 1.1, "ALT": 55.0, "ECOG_PS": 0.0},
+    "visit_dates": ["2025-02-05"],
+    "adverse_events": []
+  }
+]

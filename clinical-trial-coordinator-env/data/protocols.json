@@ -1,0 +1,87 @@
+[
+  {
+    "trial_id": "TRIAL-001",
+    "title": "Phase III Study of XR-4471 in Type 2 Diabetes with CKD",
+    "phase": "III",
+    "inclusion_criteria": [
+      "Age 30-75 years",
+      "Type 2 diabetes diagnosis >= 6 months",
+      "HbA1c between 7.5% and 11.0%",
+      "eGFR >= 30 mL/min/1.73m2",
+      "Body weight 50-130 kg",
+      "Stable antidiabetic therapy for >= 3 months prior to screening"
+    ],
+    "exclusion_criteria": [
+      "Type 1 diabetes or LADA",
+      "Pregnancy or breastfeeding",
+      "Active malignancy within last 5 years",
+      "Current use of GLP-1 receptor agonists",
+      "Heart failure (NYHA Class III or IV)",
+      "Liver disease (ALT > 3x ULN)",
+      "Recent (< 3 months) cardiovascular event",
+      "Hypersensitivity to XR-4471 or excipients"
+    ],
+    "visit_schedule": {
+      "screening": -14,
+      "baseline": 0,
+      "week_4": 28,
+      "week_12": 84,
+      "week_24": 168,
+      "week_52": 364
+    },
+    "prohibited_medications": [
+      "GLP-1 receptor agonists",
+      "SGLT2 inhibitors (unless part of stable background therapy)",
+      "Strong CYP3A4 inhibitors",
+      "Systemic corticosteroids > 7 days"
+    ],
+    "safety_thresholds": {
+      "eGFR":    {"min": 25.0, "action": "dose_reduction"},
+      "ALT":     {"max": 200.0, "action": "hold_drug"},
+      "HbA1c":   {"min": 6.0, "max": 12.0, "action": "alert"},
+      "systolic_bp": {"max": 180.0, "action": "alert"}
+    }
+  },
+  {
+    "trial_id": "TRIAL-002",
+    "title": "Phase II Oncology Study of BK-9901 in Advanced NSCLC",
+    "phase": "II",
+    "inclusion_criteria": [
+      "Age >= 18 years",
+      "Histologically confirmed NSCLC",
+      "ECOG Performance Status 0 or 1",
+      "At least one prior platinum-based chemotherapy",
+      "Measurable disease per RECIST 1.1",
+      "Adequate organ function: ANC >= 1.5, Platelets >= 100, Creatinine <= 1.5x ULN"
+    ],
+    "exclusion_criteria": [
+      "Active brain metastases (untreated)",
+      "Prior treatment with anti-PD-1/PD-L1 agents",
+      "Active autoimmune disease requiring systemic treatment",
+      "HIV positive",
+      "Active hepatitis B or C",
+      "Concurrent use of strong immunosuppressants",
+      "Live vaccine within 30 days of enrollment"
+    ],
+    "visit_schedule": {
+      "screening": -21,
+      "cycle_1_day_1": 0,
+      "cycle_1_day_15": 14,
+      "cycle_2_day_1": 21,
+      "cycle_3_day_1": 42,
+      "end_of_treatment": 84
+    },
+    "prohibited_medications": [
+      "Systemic corticosteroids > 10mg prednisone equivalent",
+      "Other investigational agents",
+      "Strong CYP3A4 inducers",
+      "Live attenuated vaccines"
+    ],
+    "safety_thresholds": {
+      "ANC":       {"min": 1.0, "action": "delay_dosing"},
+      "platelets": {"min": 75.0, "action": "delay_dosing"},
+      "creatinine":{"max": 2.5, "action": "hold_drug"},
+      "ALT":       {"max": 150.0, "action": "hold_drug"}
+    }
+  }
+]

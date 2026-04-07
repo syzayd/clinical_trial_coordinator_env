@@ -1,0 +1,61 @@
+{
+  "adverse_events": [
+    {
+      "ae_id": "AE-001",
+      "patient_id": "PT-001",
+      "event_description": "Symptomatic hypoglycemia with blood glucose 52 mg/dL, resolved with oral glucose",
+      "onset_date": "2025-03-15",
+      "severity": "moderate",
+      "relatedness": "probable",
+      "outcome": "recovered",
+      "action_taken": "Dose reduction of background insulin by 20%",
+      "is_serious": false
+    },
+    {
+      "ae_id": "AE-002",
+      "patient_id": "PT-004",
+      "event_description": "Grade 3 pneumonitis requiring hospitalization and high-dose corticosteroid therapy",
+      "onset_date": "2025-03-20",
+      "severity": "severe",
+      "relatedness": "probable",
+      "outcome": "recovering",
+      "action_taken": "Study drug permanently discontinued; IV methylprednisolone 2mg/kg initiated",
+      "is_serious": true,
+      "sae_criteria": "Requires hospitalization",
+      "time_to_onset_days": 47
+    },
+    {
+      "ae_id": "AE-003",
+      "patient_id": "PT-004",
+      "event_description": "Grade 2 fatigue",
+      "onset_date": "2025-03-05",
+      "severity": "moderate",
+      "relatedness": "possible",
+      "outcome": "ongoing",
+      "action_taken": "No action required",
+      "is_serious": false
+    }
+  ],
+  "visit_records": [
+    {
+      "visit_id": "VIS-001",
+      "patient_id": "PT-001",
+      "scheduled_day": 28,
+      "actual_day": 35,
+      "procedures_done": ["vitals", "HbA1c", "eGFR", "study_drug_dispensed"],
+      "procedures_required": ["vitals", "HbA1c", "eGFR", "ECG", "study_drug_dispensed"],
+      "vitals": {"weight_kg": 81.2, "systolic_bp": 134.0, "diastolic_bp": 82.0, "heart_rate": 74},
+      "notes": "Patient reported mild nausea in first 2 weeks, now resolved. ECG not performed due to equipment downtime."
+    },
+    {
+      "visit_id": "VIS-002",
+      "patient_id": "PT-004",
+      "scheduled_day": 14,
+      "actual_day": 14,
+      "procedures_done": ["vitals", "CBC", "LFTs", "CT_chest", "RECIST_assessment", "adverse_event_review"],
+      "procedures_required": ["vitals", "CBC", "LFTs", "CT_chest", "RECIST_assessment", "adverse_event_review", "PK_sample"],
+      "vitals": {"weight_kg": 63.1, "systolic_bp": 118.0, "diastolic_bp": 74.0, "heart_rate": 82},
+      "notes": "Patient reports Grade 1 cough, Grade 2 fatigue. PK sample not collected — patient refused."
+    }
+  ]
+}

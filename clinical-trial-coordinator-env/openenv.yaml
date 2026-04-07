@@ -1,0 +1,88 @@
+name: clinical-trial-coordinator-env
+version: "1.0.0"
+description: >
+  A real-world OpenEnv environment simulating the workflow of a clinical research coordinator (CRC).
+  AI agents learn to screen patients for eligibility, detect protocol deviations, and draft
+  regulatory-compliant Serious Adverse Event (SAE) narratives — tasks that are genuinely performed
+  by humans in pharmaceutical clinical trials.
+
+tags:
+  - openenv
+  - healthcare
+  - clinical-trials
+  - regulatory
+  - real-world
+  - rl-environment
+
+author: "OpenEnv Hackathon Submission"
+license: MIT
+
+# Task definitions
+tasks:
+  - name: screen_patient
+    difficulty: easy
+    description: >
+      Given a patient's medical record and a trial protocol (inclusion/exclusion criteria),
+      determine whether the patient is eligible to participate. Identify all violated criteria.
+    action_type: screen_patient
+    max_steps: 4
+    reward_range: [0.0, 1.0]
+    terminal: true
+
+  - name: detect_deviation
+    difficulty: medium
+    description: >
+      Review a completed clinical visit record against the trial protocol and identify
+      any protocol deviations. Classify each deviation by type and severity (minor/major/critical)
+      and suggest corrective actions.
+    action_type: flag_deviation
+    max_steps: 6
+    reward_range: [0.0, 1.0]
+    terminal: true
+
+  - name: draft_sae_narrative
+    difficulty: hard
+    description: >
+      Given a serious adverse event report, draft a complete ICH E2A-compliant SAE narrative
+      suitable for regulatory submission. Includes causality assessment and regulatory
+      classification (e.g., requires_hospitalization, life-threatening).
+    action_type: draft_sae_narrative
+    max_steps: 8
+    reward_range: [0.0, 1.0]
+    terminal: true
+
+# OpenEnv API spec
+api:
+  reset_endpoint: POST /reset
+  step_endpoint: POST /step
+  state_endpoint: GET /state
+  health_endpoint: GET /health
+  tasks_endpoint: GET /tasks
+
+# Model schemas
+observation_model: ClinicalTrialObservation
+action_model: ClinicalTrialAction
+reward_model: ClinicalTrialReward
+
+# Infrastructure
+server:
+  framework: fastapi
+  port: 7860
+  host: "0.0.0.0"
+
+# Reward design notes
+reward_notes: >
+  All tasks provide partial credit via structured reward breakdown:
+  - correctness: was the core decision right?
+  - completeness: were all required elements identified?
+  - reasoning_quality: was the rationale accurate and well-supported?
+  - efficiency_bonus: bonus for completing in fewer steps
+  - penalty: deductions for invalid actions or step budget exhaustion
+  Reward is always in [0.0, 1.0] — never binary, always shaped.
+
+# Evaluation notes
+evaluation_notes: >
+  Task 1 (easy): Most frontier models should score 0.7-0.9 on clear ineligible cases.
+  Task 2 (medium): Models without clinical knowledge may miss deviation severity nuance; expected 0.4-0.7.
+  Task 3 (hard): SAE narrative requires domain expertise; expected 0.3-0.6 for current frontier models.
+  The hard task is designed to challenge even the best models.
